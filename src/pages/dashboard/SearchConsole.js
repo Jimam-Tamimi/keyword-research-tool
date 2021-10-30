@@ -32,7 +32,7 @@ export default function SearchConsole() {
     function authenticate() {
         return window.gapi.auth2.getAuthInstance()
             .signIn({ scope: "https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly" })
-            .then(function () { dispatch(alert('Signin successfull!!')) },
+            .then(function (data) { dispatch(alert('Signin successfull!!')); console.log(data) },
                 function (err) { dispatch(alert('Signin Failed!!', 'danger')) });
     }
     function loadClient() {
